@@ -111,10 +111,12 @@ namespace DSAFinalUI {
 
 		}
 #pragma endregion
-	// JACK
+	// Button is Clicked
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		// String is year
 		String^ year = textBox2->Text;
 
+		// Open next form
 		MyForm1^ form1 = gcnew MyForm1(year);
 		form1->ShowDialog();
 	}

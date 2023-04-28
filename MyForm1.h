@@ -36,9 +36,10 @@ namespace DSAFinalUI {
 			label1->Text = "Movies released in " + year;
 			label6->Text = "Top 10 Movies in " + year + "\n";
 
+			// String^ -> string
 			string yearString = msclr::interop::marshal_as<string>(year);
 
-			// Merge Sort and Quick sort
+			// Merge Sort
 			Search movies1(yearString);
 			auto begin = chrono::high_resolution_clock::now();
 			mergeSort(movies1.searchmovieList, 0, movies1.searchmovieList.size() - 1);
@@ -50,6 +51,7 @@ namespace DSAFinalUI {
 
 			label4->Text = timeM;
 
+			// Quicksort
 			Search movies2(yearString);
 			begin = chrono::high_resolution_clock::now();
 			quickSort(movies2.searchmovieList, 0, movies2.searchmovieList.size() - 1);
@@ -122,7 +124,6 @@ namespace DSAFinalUI {
 			this->label1->Size = System::Drawing::Size(84, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm1::label1_Click);
 			// 
 			// label2
 			// 
@@ -150,7 +151,6 @@ namespace DSAFinalUI {
 			this->label4->Size = System::Drawing::Size(23, 13);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"tms";
-			this->label4->Click += gcnew System::EventHandler(this, &MyForm1::label4_Click);
 			// 
 			// label5
 			// 
@@ -184,7 +184,7 @@ namespace DSAFinalUI {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->ClientSize = System::Drawing::Size(349, 326);
+			this->ClientSize = System::Drawing::Size(349, 474);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
@@ -200,9 +200,5 @@ namespace DSAFinalUI {
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	};
 }
